@@ -1,27 +1,27 @@
 const partOne = () => {
-	const input = document.body.innerText;
+    const input = document.body.innerText;
 
-	const lines = input.trim().split('\n').map(line => line.split(/\s+/));
+    const lines = input.trim().split('\n').map(line => line.split(/\s+/));
 
-	const listA = [];
-	const listB = [];
-	const listDiffs = [];
+    const listA = [];
+    const listB = [];
+    const listDiffs = [];
 
-	lines.forEach( line => {
-		listA.push(line[0]);
-		listB.push(line[1]);
-	});
+    lines.forEach( line => {
+        listA.push(line[0]);
+        listB.push(line[1]);
+    });
 
-	listA.sort();
-	listB.sort();
+    listA.sort();
+    listB.sort();
 
-	for (let i = 0; i < listA.length; i++) {
-		listDiffs.push(Math.abs(listA[i] - listB[i]));
-	}
+    for (let i = 0; i < listA.length; i++) {
+        listDiffs.push(Math.abs(listA[i] - listB[i]));
+    }
 
-	console.log(
-		listDiffs.reduce((sum, curr) => sum + curr)
-	);
+    console.log(
+        listDiffs.reduce((sum, curr) => sum + curr)
+    );
 };
 partOne();
 const partTwo = () => {

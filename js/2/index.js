@@ -21,18 +21,18 @@ const partOne = (reports) => {
 };
 
 const dampen = (report) => {
-	for (let i = 0 ; i < report.length; i++) {
-		const subreport = [...report];
-		subreport.splice(i,1);
-		if (isSafe(subreport)) return true;
-	}
-	return false;
+    for (let i = 0 ; i < report.length; i++) {
+        const subreport = [...report];
+        subreport.splice(i,1);
+        if (isSafe(subreport)) return true;
+    }
+    return false;
 };
 
 const partTwo = (reports) => {
     let safeCount = 0;
     for (const report of reports) {
-		if (isSafe(report) || dampen(report)) safeCount++;
+        if (isSafe(report) || dampen(report)) safeCount++;
     }   
 
     console.log(
@@ -44,8 +44,8 @@ const main = () => {
     const input = document.body.innerText;
     const reports = input.trim().split('\n').map(line => line.split(/\s+/).map((num) => parseInt(num)));
 
-	partOne(reports);
-	partTwo(reports);
+    partOne(reports);
+    partTwo(reports);
 };
 
 main();
